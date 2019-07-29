@@ -10,14 +10,16 @@ function getDogImages(breedInput) {
 function displayResults(responseJson) {
   console.log(responseJson);
   // debugger;
-  if (responseJson.message === "Breed not found") {
+  if (responseJson.status === "error") {
+    $('.results').html('');
     $('.results').append(`<h2>Breed not found. Please try again.</h2>`);
+    $('.results').removeClass('hidden');
   } else {
-  $('.results').html('');
-  $('.results').append(`<h2>Dog Pic Time!</h2>`);
-  $('.results').append(`<img src="${responseJson.message}" class="results">`);
-  $('.results').removeClass('hidden');
-  $('#dog-breed').val('');
+    $('.results').html('');
+    $('.results').append(`<h2>Dog Pic Time!</h2>`);
+    $('.results').append(`<img src="${responseJson.message}" class="results">`);
+    $('.results').removeClass('hidden');
+    $('#dog-breed').val('');
   }
 }
 
