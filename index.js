@@ -12,8 +12,9 @@ function displayResults(responseJson) {
   // debugger;
   if (responseJson.status === "error") {
     $('.results').html('');
-    $('.results').append(`<h2>Breed not found. Please try again.</h2>`);
+    $('.results').append(`<h2>Breed not found. Please choose another breed.</h2>`);
     $('.results').removeClass('hidden');
+    $('#dog-breed').val('');
   } else {
     $('.results').html('');
     $('.results').append(`<h2>Dog Pic Time!</h2>`);
