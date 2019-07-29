@@ -1,7 +1,6 @@
 'use strict';
 
 function getDogImages(breedInput) {
-  
   fetch(`https://dog.ceo/api/breed/${breedInput}/images/random`)
   .then(response => response.json())
   .then(responseJson => displayResults(responseJson))
